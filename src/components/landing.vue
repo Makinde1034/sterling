@@ -1,41 +1,61 @@
 <template>
-    <section class="benefits">
-        <div class="benefits__logo">
-            <img src="../assets/sterlingLogo.png" alt="">
-        </div>
-        <div class="benefits__naira">
-            <h3>Every Naira Counts</h3>
-            <p>Start saving now to get the best benefits from your sterling account</p>
-        </div>
-        <div class="benefits__grid">
-            <div>
-                <img src="../assets/instant.svg" alt="">
+    <div>
+        <section class="benefits">
+            <div class="benefits__logo">
+                <img src="../assets/sterlingLogo.png" alt="">
             </div>
-            <div>
-                <img src="../assets/global.png" alt="">
+            <div class="benefits__naira">
+                <h3>Every Naira Counts</h3>
+                <p>Start saving now to get the best benefits from your sterling account</p>
             </div>
-            <div>
-                <img src="../assets/active.png" alt="">
+            <div class="benefits__grid">
+                <div>
+                    <img src="../assets/instant.svg" alt="">
+                </div>
+                <div>
+                    <img src="../assets/global.png" alt="">
+                </div>
+                <div>
+                    <img src="../assets/active.png" alt="">
+                </div>
+                <div>
+                    <img src="../assets/010.svg" alt="">
+                </div>
             </div>
-            <div>
-                <img src="../assets/010.svg" alt="">
+            <div class="mask">
+                <router-link to='/signup'>
+                    <button>Open an acccount for free</button>   
+                </router-link>
+                <router-link class="login__link" to="/login">
+                     <p>Have an account? <span>sign in</span></p> 
+                </router-link>
+              
             </div>
-        </div>
-        <div class="mask">
-            <router-link to='/signup'>
-                <button>Open an acccount for free</button>   
-            </router-link>
-            <p>Have an account? <span>sign in</span></p>
-        </div>
-        <!-- absolue images -->
-        <img class="topcircles" src="../assets/Group538.png" alt="">
-        <img class="bottomcircles" src="../assets/group2.png" alt="">
-    </section>
+            <!-- absolue images -->
+           
+        </section> 
+        <div class="img">
+            <img class="topcircles" src="../assets/Group538.png" alt="">
+            <img class="bottomcircles" src="../assets/group2.png" alt="">
+        </div>  
+    </div>
+    
 </template>
 
 <script>
 export default {
+    data(){
+        return{
 
+        }
+    },
+    mounted(){
+        const stored__session = localStorage.getItem("session");
+        if(stored__session){
+            this.$router.push({name:"Accountoption"});
+        }
+
+    }
 }
 </script>
 
@@ -64,6 +84,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
 .benefits__naira h3{
@@ -95,12 +116,15 @@ export default {
     position: fixed;
     left: 0px;
     top: 0px;
+    z-index: 0;
+ 
 }
 
 .bottomcircles{
     bottom: 0px;
     right: 0px;
     position: fixed;
+  
 }
 
 .benefits__grid{
@@ -109,11 +133,17 @@ export default {
     grid-template-columns: 256px 256px;
     grid-template-rows: 183px 183px;
     gap: 30px 30px; 
+    z-index: 1;
    
 }
+
 .benefits__grid div img{
     width: 100%;
     height: 100%;
+}
+
+.mask{
+    z-index: 1;
 }
 
 .mask button{
@@ -139,4 +169,75 @@ export default {
     color: #1F8D54;
     cursor: pointer;
 }
+
+.login__link{
+    text-decoration: none;
+}
+
+@media screen and (max-width:600px){
+    .benefits{
+        overflow-x: hidden;
+        padding-top: 70px;
+    }
+    html{
+        overflow-x: hidden;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .topcircles{
+        /* display: none; */
+        height: 100px;
+    }
+
+    .bottomcircles{
+        /* display: none; */
+        height: 100px;
+    }
+
+    .benefits__grid{
+        display: flex;
+        /* width:100vw; */
+        /* width: auto; */
+        overflow-x:scroll;
+        /* width:300px; */
+        /* background:red; */
+        grid-template-columns: 0px 0px;
+        grid-template-rows: 0px 0px;
+        gap: 0px 0px; 
+        width:90vw;
+        
+    }
+
+    .benefits__grid div img{
+        width:300px;
+        height:200px;
+        margin-left: 20px;
+    }
+
+    .mask button{
+        max-width: 324px;
+    }
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 3px;
+        margin-top: 5px;
+    }
+
+/* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.449);
+        border-radius: 10px;
+    }
+
+/* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #0EA0BC;
+
+        border-radius: 10px;
+    }
+
+   
+}
+
 </style>

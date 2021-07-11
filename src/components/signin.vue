@@ -1,16 +1,19 @@
 <template>
     <div class="signIn">
         <header>
-            <img src="../assets/sterlingLogo.png" alt="">
+            <img src="../assets/sterlingLogo.png" alt="sterling logo">
         </header>
         <h3>Start here to experience</h3>
         <h3>premium banking</h3>
         <p>Sign in to continue filling the from <br> where you stopped the last time</p>
-        <form action="">
+        <form  @submit="loguserIn" class="form">
         
-            <input placeholder="Makinde@example.com" type="text">
+            <input  required v-model="loginDetails.email"   placeholder="Makinde@example.com" type="text">
             <button>Continue</button>
-            <p>First time here?<span> open an account</span></p>
+            <router-link class="signup__link" to="/signup">
+                <p>First time here?<span> open an account</span></p>
+            </router-link>
+         
         </form>
         <!-- <form @submit="loguserIn" action="">
             <input required v-model="loginDetails.email" placeholder="email" type="text">
@@ -22,8 +25,8 @@
             <p :class="style">Email or password is not correct, try again</p>
         </form>
    -->
-        <img class="topcircles" src="../assets/Group538.png" alt="">
-        <img class="bottomcircles" src="../assets/group2.png" alt="">
+        <img class="topcircles" src="../assets/Group538.png" alt="top circle">
+        <img class="bottomcircles" src="../assets/group2.png" alt="bottom cirle">
     </div>
 </template>
 
@@ -47,11 +50,11 @@ export default {
         async loguserIn(e){
             e.preventDefault()
             this.loader=true
-            await axios.get(`http://localhost:3000/user?email=${this.loginDetails.email}&password=${this.loginDetails.password}`).
+            await axios.get(`http://localhost:3000/user?email=${this.loginDetails.email}`).
             then((res)=>{
                 console.log(res)
                 if(res.status===200 && res.data.length>0){
-                    this.$router.push({name:"Home"});
+                    this.$router.push({name:"Accountoption"});
                     localStorage.setItem('session',JSON.stringify(res.data));
                     this.loader =false
                 }else{
@@ -125,13 +128,13 @@ header img{
     color: red;
 }
 
-form{
+.form{
     margin-top: 30px;
     display: flex;
     flex-direction: column;
 }
 
-form input{
+.form input{
     height: 64px;
     width: 371px;
     border-radius: 4px;
@@ -141,7 +144,7 @@ form input{
 
 }
 
-form button{
+.form button{
     height: 59px;
     width: 371px;
     left: 0px;
@@ -157,14 +160,40 @@ form button{
 
 }
 
-form p{
+.form p{
     color:#929292;
     font-size: 16px;
     font-weight: 500;
 }
 
-form span{
+.form span{
     color:#2d945f;
     cursor: pointer;
+}
+
+.signup__link{
+    text-decoration: none;
+}
+
+@media screen and (max-width:600px) {
+    .topcircles{
+        height: 100px;
+    }
+
+    .bottomcircles{
+        height:100px;
+    }
+
+    .form{
+        align-items: center;
+    }
+
+    .form button{
+        width: 324px;
+    }
+
+    .form input{
+        width:324px
+    }
 }
 </style>

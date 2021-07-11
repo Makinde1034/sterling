@@ -1,11 +1,11 @@
 import {createRouter,createWebHistory} from 'vue-router'
-import SignUp from '../components/signup'
+import SignUp from '../components/signUp'
 // import Home from '../components/home'
-import Login from '../components/signin'
+import Login from '../components/signIn'
 import Add from '../components/add'
 import Landing from '../components/landing'
 import Success from '../components/successful'
-import Accountoptions from '../components/accountoption'
+import Accountoptions from '../components/accountOptions'
 
 const routes = [
     {
@@ -44,6 +44,6 @@ const routes = [
 const router = createRouter({
     history:createWebHistory(),
     routes
-})
+});
 
 export default router

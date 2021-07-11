@@ -5,24 +5,11 @@
                 <img src="../assets/sterlingLogo.png" alt="">
             </div>
             <h3>Successful verification</h3>
-            <p>Your account has been verified successflly, please <br> continue to fill in the subsequent account opening forms.</p>
+            <p class="success__para">Your account has been verified successflly, please  continue to fill in the subsequent account opening forms.</p>
             <router-link to="/options">
                 <button>Continue</button>
             </router-link>
         </section>
-        <div  :options="{ useUrlFragment: false }">
-            <tabs>
-                <tab name="First tab">
-                    First tab content
-                </tab>
-                <tab name="Second tab">
-                    Second tab content
-                </tab>
-                <tab name="Third tab">
-                    Third tab content
-                </tab>
-            </tabs>
-        </div>
         <img class="topcircles" src="../assets/Group538.png" alt="">
         <img class="bottomcircles" src="../assets/group2.png" alt="">
     </div>
@@ -80,6 +67,11 @@ section button{
     cursor: pointer;
 }
 
+.success__para{
+    width: 30%;
+    text-align: center;
+}
+
 .topcircles{
     position: fixed;
     left: 0px;
@@ -90,6 +82,24 @@ section button{
     bottom: 0px;
     right: 0px;
     position: fixed;
+}
+
+@media screen and (max-width:600px) {
+    .success__para{
+        width: 100%;
+    }
+
+    .topcircles{
+        height: 100px;
+    }
+
+    .bottomcircles{
+        height: 100px;
+    }
+
+    section button{
+        width: 324px;
+    }
 }
 
 </style>

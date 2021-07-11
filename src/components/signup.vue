@@ -1,15 +1,15 @@
 <template>
   <div class="signUp">
         <header>
-            <img src="../assets/sterlingLogo.png" alt="">
+            <img src="../assets/sterlingLogo.png" alt="sterling logo">
         </header>
         <h3>Start here to experience</h3>
         <h3>premium banking</h3>
         <p>Verify your email to continue with the sign <br> up process.</p>
-        <form action="">
-            <input placeholder="Makinde@example.com" type="text">
+        <form  @submit="signUp"   class="form">
+            <input v-model="userDetails.email" placeholder="Makinde@example.com" type="text">
             <button>Continue</button>
-            <router-link to="login">
+            <router-link class="link" to="login">
                 <p>Not new here? <span>login</span></p>
             </router-link>
         </form>
@@ -44,13 +44,13 @@ export default {
         async signUp(e){
             e.preventDefault();
             await axios.post("http://localhost:3000/user",{
-                name:this.userDetails.name,
+                // name:this.userDetails.name,
                 email:this.userDetails.email,
-                password:this.userDetails.password
+                // password:this.userDetails.password
             }).then((res)=>{
                 console.log(res);
                 if(res.status===201){
-                    this.$router.push({name:"Home"});
+                    this.$router.push({name:"Accountoption"});
                     localStorage.setItem('session',JSON.stringify(res.data));
                 }
             })
@@ -59,7 +59,7 @@ export default {
     mounted(){
         const storedInfo = localStorage.getItem('session');
         if(storedInfo){
-            this.$router.push({name:"Home"});
+            this.$router.push({name:"Accountoption"});
         }
     }
 }
@@ -79,12 +79,14 @@ export default {
 }
 
 header img{
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    z-index:1;
 }
 
 .signUp h3{
     font-size: 20px;
     font-weight: 500;
+    z-index:1;
     
 }
 
@@ -93,27 +95,32 @@ header img{
     text-align-last: center;
     margin-top: 10px;
     font-size: 18px;
+    z-index:1;
 }
 
 .topcircles{
     position: fixed;
     left: 0px;
     top: 0px;
+    z-index: 0;
 }
 
 .bottomcircles{
     bottom: 0px;
     right: 0px;
     position: fixed;
+    z-index: 0;
 }
 
-form{
+.form{
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+    z-index:1;
+    align-items: center;
 }
 
-form input{
+.form input{
     height: 64px;
     width: 371px;
     border-radius: 4px;
@@ -123,7 +130,7 @@ form input{
 
 }
 
-form button{
+.form button{
     height: 59px;
     width: 371px;
     left: 0px;
@@ -139,7 +146,7 @@ form button{
 
 }
 
-form p{
+.form p{
     color:#929292;
     font-size: 16px;
     font-weight:500;
@@ -147,13 +154,35 @@ form p{
 }
 
 
-form  span{
+.form  span{
     color:#2d945f;
     cursor: pointer;
 }
 
-form a{
+.link{
     text-decoration: none;
 }
 
+
+@media screen and (max-width:600px){
+    .signUp{
+        /* padding-left: 20px;
+        padding-right: 20px; */
+    }
+    .topcircles{
+        height: 100px;
+    }
+
+    .bottomcircles{
+        height:100px;
+    }
+
+    .form button{
+        width: 324px;
+    }
+
+    .form input{
+        width: 324px;
+    }
+}
 </style>
