@@ -7,7 +7,7 @@
         <h3>premium banking</h3>
         <p>Verify your email to continue with the sign <br> up process.</p>
         <form  @submit="signUp"   class="form">
-            <input v-model="userDetails.email" placeholder="Makinde@example.com" type="text">
+            <input v-model="userDetails.email" placeholder="Makinde@example.com" type="email">
             <button>Continue</button>
             <router-link class="link" to="login">
                 <p>Not new here? <span>login</span></p>

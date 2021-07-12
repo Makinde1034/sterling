@@ -40,7 +40,7 @@ export default {
         return{
             loginDetails:{
                 email:'',
-                password:''
+                // password:''
             },
             loader:false,
             style:"red"
