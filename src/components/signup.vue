@@ -148,7 +148,7 @@ header img{
 
 .form p{
     color:#929292;
-    font-size: 16px;
+    font-size: 15px;
     font-weight:500;
     text-decoration: none;
 }
