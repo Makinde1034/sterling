@@ -1,6 +1,5 @@
 import {createRouter,createWebHistory} from 'vue-router'
 import SignUp from '../components/signUp'
-// import Home from '../components/home'
 import Login from '../components/signIn'
 import Add from '../components/add'
 import Landing from '../components/landing'
