@@ -50,7 +50,7 @@ export default {
         async loguserIn(e){
             e.preventDefault()
             this.loader=true
-            await axios.get(`http://localhost:3000/user?email=${this.loginDetails.email}`).
+            await axios.get(`https://my-json-server.typicode.com/makinde1034/sterling-serer/user?email=${this.loginDetails.email}`).
             then((res)=>{
                 console.log(res)
                 if(res.status===200 && res.data.length>0){

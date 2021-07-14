@@ -5,12 +5,15 @@
         </header>
         <h3>Start here to experience</h3>
         <h3>premium banking</h3>
-        <p>Verify your email to continue with the sign <br> up process.</p>
+        <p class="signUp__para">Verify your email to continue with the sign <br> up process.</p>
         <form  @submit="signUp"   class="form">
-            <input v-model="userDetails.email" placeholder="Makinde@example.com" type="email">
-            <button>Continue</button>
+            <input v-model="userDetails.email" required placeholder="Makinde@example.com" type="email">
+            <button>
+                <p v-if="loading===false" class="form__but">Continue</p>
+                <preloader v-if="loading===true" />
+            </button>
             <router-link class="link" to="login">
-                <p>Not new here? <span>login</span></p>
+                <p class="form__para">Not new here? <span>login</span></p>
             </router-link>
         </form>
         <!-- <form @submit="signUp"  action="">
@@ -29,7 +32,10 @@
 
 <script>
 import axios from 'axios'
+import Preloader from '../utils/preloader.vue'
+
 export default {
+  components: { Preloader },
     name:'signup',
     data(){
         return{
@@ -37,20 +43,23 @@ export default {
                 name:'',
                 email:'',
                 password:''
-            }
+            },
+            loading:false
         }
     },
     methods:{
         async signUp(e){
             e.preventDefault();
-            await axios.post("http://localhost:3000/user",{
+            this.loading = true
+            await axios.post("https://my-json-server.typicode.com/makinde1034/sterling-serer/user",{
                 // name:this.userDetails.name,
                 email:this.userDetails.email,
                 // password:this.userDetails.password
             }).then((res)=>{
                 console.log(res);
+                res.loading =false
                 if(res.status===201){
-                    this.$router.push({name:"Accountoption"});
+                    this.$router.push({name:"Success"});
                     localStorage.setItem('session',JSON.stringify(res.data));
                 }
             })
@@ -90,8 +99,8 @@ header img{
     
 }
 
-.signUp p{
-    color: #929292;
+.signUp__para{
+    /* color: #929292; */
     text-align-last: center;
     margin-top: 10px;
     font-size: 18px;
@@ -142,15 +151,22 @@ header img{
     margin-top: 30px;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 
 }
 
-.form p{
+.form__para{
     color:#929292;
-    font-size: 15px;
-    font-weight:500;
-    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.form__but{
+    color: white;
+    /* font-size: 8px; */
 }
 
 
@@ -161,6 +177,7 @@ header img{
 
 .link{
     text-decoration: none;
+    margin-top: 10px;
 }
 
 

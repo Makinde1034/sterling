@@ -1,7 +1,10 @@
 <template>
     <div>
         <center class="main">
-            Welcome {{email}}
+            <img src="../assets/sterlingLogo.png" alt="">
+            <h3 class="main__naira">Every naira counts</h3>
+            <p class="main__para">Start saving now to get the best benefits from your sterling account</p>
+            <h3 class="welcome">Welcome {{email}}</h3>
             <div class="account">
                 <div class="account__navigation">
                     <div @click="toggleCurrentBox" class="savings">
@@ -18,20 +21,32 @@
                         <savingsOption title='ATM withdrwals' />
                         <savingsOption title='Attractive internet rates' />
                         <savingsOption title='No opening account balance' />
+                        <Button />
                     </div>
-                    <div :class="savingActive ? ['savings__box__off','savings__box'] : 'savings__box' ">Current</div>
+                    <div :class="savingActive ? ['savings__box__off','savings__box'] : 'savings__box' ">
+                        <savingsOption title='Instant access to debit card' />
+                        <savingsOption title='Global bank transfer' />
+                        <savingsOption title='ATM withdrwals' />
+                        <savingsOption title='Attractive internet rates' />
+                        <savingsOption title='No opening account balance' />
+                        <Button />
+                    </div>
                 </div>
             </div> 
         </center>
+        <!-- <img class="topcircles" src="../assets/Group538.png" alt=""> -->
+        <!-- <img class="bottomcircles" src="../assets/group2.png" alt=""> -->
     </div>
+
 </template>
 
 <script>
 import savingsOption from './savingsOption.vue'
-// import check from '../assets/tt'
+import  Button from '../utils/button.vue'
 export default {
     components:{
         savingsOption,
+        Button
     },
     name:"Accountoption",
     data(){
@@ -58,17 +73,17 @@ export default {
             this.current__paragraph = 'brown'
         }
     },
-    // mounted(){
-    //     const stored__session = localStorage.getItem("session");
+    mounted(){
+        const stored__session = localStorage.getItem("session");
 
-    //     if(!stored__session){
-    //         this.$router.push({name:"Landing"});
-    //     }else{
-    //         const parsed__stored__session = JSON.parse(stored__session);
-    //         this.email = parsed__stored__session.email
+        if(!stored__session){
+            this.$router.push({name:"Landing"});
+        }else{
+            const parsed__stored__session = JSON.parse(stored__session);
+            this.email = parsed__stored__session.email
             
-    //     }
-    // }
+        }
+    }
 }
 </script>
 
@@ -81,11 +96,42 @@ export default {
     padding-top: 50px;
     padding-left: 20px;
     padding-right: 20px;
+    z-index: 1;
+}
+
+.main img{
+    z-index: 1;
+}
+
+.main__naira{
+    font-size: 20px;
+    font-weight: 500;
+    z-index:1;
+    margin-top: 20px;
+}
+
+.main__para{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #929292;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    z-index: 1;
+}
+
+.welcome{
+    margin-bottom: 20px;
 }
 .account{
     /* height: 400px; */
     max-width: 422px;
     background: #edf4f8;
+    z-index: 1;
 }
 
 .account__navigation{
@@ -95,13 +141,18 @@ export default {
 }
 
 .savings{
-    background: #f1fafc;
+    background:#e0f4f8;
+    
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     cursor: pointer;
     padding-left: 30px;
+}
+
+.savings__active{
+    background:#f1fafc ;
 }
 
 .savings p{
@@ -112,8 +163,11 @@ export default {
     letter-spacing: 0px;
     text-align: left;
    
+   
     
 }
+
+
 
 .brown{
     color: #00263B86;
@@ -131,6 +185,7 @@ export default {
     width:50%;
     cursor: pointer;
     padding-right: 30px;
+    background: #e0f4f8;
 }
 
 .current p{
@@ -179,5 +234,19 @@ export default {
 
 .current__box__off{
     display: none;
+}
+
+.topcircles{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 0;
+}
+
+.bottomcircles{
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
+    z-index: 0;
 }
 </style>

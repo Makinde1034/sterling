@@ -17,11 +17,11 @@ export default {
     padding:.5rem;
 } */
 .loader {
-  border: 2px solid orange;
+  border: 3px solid #0EA0BC;
   border-radius: 50%;
-  border-top: 2px solid white;
-  width: 15px;
-  height: 15px;
+  border-top: 3px solid white;
+  width: 25px;
+  height: 25px;
   -webkit-animation: spin .5s linear infinite; /* Safari */
   animation: spin .5s linear infinite;
 }
