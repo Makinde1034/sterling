@@ -10,16 +10,16 @@
             </div>
             <div class="benefits__grid">
                 <div>
-                    <img src="../assets/instant.svg" alt="">
+                    <img src="../assets/instant.svg" alt="instant">
                 </div>
                 <div>
-                    <img src="../assets/global.png" alt="">
+                    <img src="../assets/global.png" alt="global">
                 </div>
                 <div>
-                    <img src="../assets/active.png" alt="">
+                    <img src="../assets/active.png" alt="active">
                 </div>
                 <div>
-                    <img src="../assets/010.svg" alt="">
+                    <img src="../assets/010.svg" alt="010">
                 </div>
             </div>
             <div class="mask">
@@ -35,8 +35,8 @@
            
         </section> 
         <div class="img">
-            <img class="topcircles" src="../assets/Group538.png" alt="">
-            <img class="bottomcircles" src="../assets/group2.png" alt="">
+            <img class="topcircles" src="../assets/Group538.png" alt="top circle">
+            <img class="bottomcircles" src="../assets/group2.png" alt="bottom circle">
         </div>  
     </div>
     

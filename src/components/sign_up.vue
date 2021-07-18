@@ -16,15 +16,6 @@
                 <p class="form__para">Not new here? <span>login</span></p>
             </router-link>
         </form>
-        <!-- <form @submit="signUp"  action="">
-            <input v-model="userDetails.name" placeholder="Enter name" type="text">
-            <input v-model="userDetails.email" placeholder="Enter email" type="text">
-            <input v-model="userDetails.password" placeholder="Enter password" type="text">
-            <button>Sign up</button>
-            <p>
-                <router-link to='/login'>Sign in</router-link>
-            </p>
-        </form> -->
         <img class="topcircles" src="../assets/Group538.png" alt="">
         <img class="bottomcircles" src="../assets/group2.png" alt="">
   </div>
@@ -49,12 +40,11 @@ export default {
     },
     methods:{
         async signUp(e){
+            // https://my-json-server.typicode.com/makinde1034/sterling-serer/user
             e.preventDefault();
             this.loading = true
             await axios.post("https://my-json-server.typicode.com/makinde1034/sterling-serer/user",{
-                // name:this.userDetails.name,
                 email:this.userDetails.email,
-                // password:this.userDetails.password
             }).then((res)=>{
                 console.log(res);
                 res.loading =false
@@ -62,6 +52,9 @@ export default {
                     this.$router.push({name:"Success"});
                     localStorage.setItem('session',JSON.stringify(res.data));
                 }
+            }).catch(()=>{
+                console.log('errr')
+                this.loading = false
             })
         }
     },

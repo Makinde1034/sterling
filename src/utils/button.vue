@@ -18,6 +18,7 @@ export default {
     border: none;
     color: white;
     font-weight: 700;
+    cursor: pointer;
 
 }
 </style>

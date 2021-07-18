@@ -15,16 +15,6 @@
             </router-link>
          
         </form>
-        <!-- <form @submit="loguserIn" action="">
-            <input required v-model="loginDetails.email" placeholder="email" type="text">
-            <input required v-model="loginDetails.password" placeholder="password" type="text">
-            <button>
-                <p v-if="loader===false">Sign in</p>
-                <Preloader v-else />
-            </button>
-            <p :class="style">Email or password is not correct, try again</p>
-        </form>
-   -->
         <img class="topcircles" src="../assets/Group538.png" alt="top circle">
         <img class="bottomcircles" src="../assets/group2.png" alt="bottom cirle">
     </div>
@@ -40,7 +30,7 @@ export default {
         return{
             loginDetails:{
                 email:'',
-                // password:''
+
             },
             loader:false,
             style:"red"
