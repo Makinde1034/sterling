@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1626681557407" clover="3.2.0">
+  <project timestamp="1626681557408" name="All files">
+    <metrics statements="50" coveredstatements="29" conditionals="8" coveredconditionals="4" methods="10" coveredmethods="5" elements="68" coveredelements="38" complexity="0" loc="50" ncloc="50" packages="3" files="11" classes="11"/>
+    <package name="assets">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="Group538.png" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\assets\Group538.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="group2.png" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\assets\group2.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+      <file name="sterlingLogo.png" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\assets\sterlingLogo.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+      </file>
+      <file name="tt.png" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\assets\tt.png">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="components">
+      <metrics statements="44" coveredstatements="23" conditionals="8" coveredconditionals="4" methods="10" coveredmethods="5"/>
+      <file name="accountOptions.vue" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\components\accountOptions.vue">
+        <metrics statements="17" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="66" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="79" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="83" count="0" type="stmt"/>
+      </file>
+      <file name="numbers.vue" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\components\numbers.vue">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="17" count="5" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+      </file>
+      <file name="savingsOption.vue" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\components\savingsOption.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="11" count="1" type="stmt"/>
+      </file>
+      <file name="sign_up.vue" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\components\sign_up.vue">
+        <metrics statements="17" coveredstatements="6" conditionals="4" coveredconditionals="1" methods="5" coveredmethods="2"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="49" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="56" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="62" count="1" type="stmt"/>
+        <line num="63" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="64" count="0" type="stmt"/>
+      </file>
+      <file name="submit.vue" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\components\submit.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="button.vue" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\utils\button.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="preloader.vue" path="C:\Users\Administrator\Desktop\bryanstuff\VUE PROJECTS\restaurant\src\utils\preloader.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

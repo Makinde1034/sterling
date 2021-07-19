@@ -52,8 +52,8 @@ export default {
                     this.$router.push({name:"Success"});
                     localStorage.setItem('session',JSON.stringify(res.data));
                 }
-            }).catch(()=>{
-                console.log('errr')
+            }).catch((e)=>{
+                console.log('errr',e)
                 this.loading = false
             })
         }
